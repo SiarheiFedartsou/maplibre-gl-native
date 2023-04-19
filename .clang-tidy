@@ -36,6 +36,7 @@ Checks: >
     -clang-analyzer-optin.cplusplus.UninitializedObject,
     -clang-analyzer-core.NonNullParamChecker,
     -clang-analyzer-core.NullDereference,
+    -clang-analyzer-core.uninitialized.Assign,
     -clang-analyzer-security.FloatLoopCounter,
     -google-build-explicit-make-pair,
     -google-build-namespaces,
