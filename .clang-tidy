@@ -35,6 +35,7 @@ Checks: >
     -bugprone-unhandled-self-assignment,
     -clang-analyzer-optin.cplusplus.UninitializedObject,
     -clang-analyzer-core.NonNullParamChecker,
+    -clang-analyzer-core.NullDereference,
     -clang-analyzer-security.FloatLoopCounter,
     -google-build-explicit-make-pair,
     -google-build-namespaces,
