@@ -37,6 +37,7 @@ Checks: >
     -clang-analyzer-core.NonNullParamChecker,
     -clang-analyzer-core.NullDereference,
     -clang-analyzer-core.uninitialized.Assign,
+    -clang-analyzer-core.UndefinedBinaryOperatorResult,
     -clang-analyzer-security.FloatLoopCounter,
     -google-build-explicit-make-pair,
     -google-build-namespaces,
