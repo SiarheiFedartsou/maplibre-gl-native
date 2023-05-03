@@ -18,6 +18,12 @@ EvaluationResult IndexOf::evaluate(const EvaluationContext& params) const {
         return evaluatedInput.error();
     }
 
+    if (!(evaluatedKeyword->is<double>() || evaluatedKeyword->is<std::string>() || evaluatedKeyword->is<bool>())) {
+        return EvaluationError {
+            "Expected double, string or boolean as keyword."
+        };
+    }
+
 
     const auto inputArray = evaluatedInput->get<std::vector<Value>>();
 
@@ -67,11 +73,8 @@ ParseResult IndexOf::parse(const Convertible& value, ParsingContext& ctx) {
         return ParseResult();
     }
 
-    ParseResult keyword = ctx.parse(arrayMember(value, 1), 1, {type::Value});
-
-    type::Type inputType = type::Array(ctx.getExpected() ? *ctx.getExpected() : type::Value);
-    ParseResult input = ctx.parse(arrayMember(value, 2), 2, {inputType});
-
+    ParseResult keyword = ctx.parse(arrayMember(value, 1), 1);
+    ParseResult input = ctx.parse(arrayMember(value, 2), 2);
 
     ParseResult fromIndex = ctx.parse(arrayMember(value, 3), 3, {type::Number});
     
