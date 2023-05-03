@@ -37,7 +37,13 @@ public:
     }
     
     std::string getOperator() const override { return "index-of"; }
+private:
+    EvaluationResult evaluateForArrayInput(const std::vector<Value>& array, const Value& keyword, int fromIndex) const;
+    EvaluationResult evaluateForStringInput(const std::string& string, const Value& keyword, int fromIndex) const;
+    
+    bool validateFromIndex(int fromIndex, size_t maxIndex, std::string* error) const;
 
+    size_t getFromIndex(const EvaluationContext& params, size_t maxIndex, std::string* error) const;
 private:
     std::unique_ptr<Expression> keyword;
     std::unique_ptr<Expression> input;
