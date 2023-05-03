@@ -142,7 +142,7 @@ target_link_libraries(
 
 target_sources(
     mbgl-test-runner
-    PRIVATE ${PROJECT_SOURCE_DIR}/platform/android/MapboxGLAndroidSDK/src/cpp/h2ttp_file_source.cpp
+    PRIVATE ${PROJECT_SOURCE_DIR}/platform/android/MapboxGLAndroidSDK/src/cpp/http_file_source.cpp
 )
 
 add_custom_command(
