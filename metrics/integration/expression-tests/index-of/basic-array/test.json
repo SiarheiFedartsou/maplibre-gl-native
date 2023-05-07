@@ -31,6 +31,7 @@
       "isZoomConstant": true,
       "type": "number"
     },
+    "serialized": ["index-of", ["get", "i"], ["get", "arr"]],
     "outputs": [
       -1,
       -1,

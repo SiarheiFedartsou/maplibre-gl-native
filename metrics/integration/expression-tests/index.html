@@ -1,0 +1,79 @@
+
+<style>
+    body { font: 18px/1.2 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; padding: 10px; }
+    h1 { font-size: 32px; margin-bottom: 0; }
+    button { vertical-align: middle; }
+    h2 { font-size: 24px; font-weight: normal; margin: 10px 0 10px; line-height: 1; }
+    .test { border-bottom: 1px dotted #bbb; padding-bottom: 5px; }
+    .tests { border-top: 1px dotted #bbb; margin-top: 10px; }
+    .test p, .test pre { margin: 0 0 10px; }
+    .test pre { font-size: 14px; }
+    .label { color: white; font-size: 18px; padding: 2px 6px 3px; border-radius: 3px; margin-right: 3px; vertical-align: bottom; display: inline-block; }
+    .hide { display: none; }
+    .test.failed > h2 > span { background: red; }
+    .test.passed > h2 > span { background: green; }
+    .test.ignored > h2 > span { background: grey; }
+    .test.errored > h2 > span { background: #ff006f; }
+    .test.ignored.passed > h2 > span { background: #E8A408; }
+</style>
+<h1 style="color: green;">All tests passed!
+    <button id='toggle-sequence'>Toggle test sequence</button>
+    <button id='toggle-passed'>Toggle passed tests</button>
+    <button id='toggle-ignored'>Toggle ignored tests</button>
+</h1>
+<div id='test-sequence' class='hide'>
+<p><strong>Test sequence: </strong>index-of/basic-string index-of/invalid-needle index-of/assert-array index-of/with-from-index index-of/basic-array index-of/invalid-haystack index-of/assert-string </p>
+</div>
+
+<script>
+document.getElementById('toggle-passed').addEventListener('click', function (e) {
+    for (const row of document.querySelectorAll('.test.passed')) {
+        row.classList.toggle('hide');
+    }
+});
+document.getElementById('toggle-ignored').addEventListener('click', function (e) {
+    for (const row of document.querySelectorAll('.test.ignored')) {
+        row.classList.toggle('hide');
+    }
+});
+document.getElementById('toggle-sequence').addEventListener('click', function (e) {
+    document.getElementById('test-sequence').classList.toggle('hide');
+});
+</script>
+<div class="tests">
+<div class="test passed">
+<h2><span class="label">passed</span> index-of/basic-string</h2>
+<p><pre>["index-of", ["get", "substr"], ["get", "str"]]</pre></p>
+<strong>Serialized:</strong><p><pre>["index-of", ["get", "substr"], ["get", "str"]]</pre></p>
+</div>
+<div class="test passed">
+<h2><span class="label">passed</span> index-of/invalid-needle</h2>
+<p><pre>["index-of", ["get", "needle"], ["get", "haystack"]]</pre></p>
+<strong>Serialized:</strong><p><pre>["index-of", ["get", "needle"], ["get", "haystack"]]</pre></p>
+</div>
+<div class="test passed">
+<h2><span class="label">passed</span> index-of/assert-array</h2>
+<p><pre>["index-of", ["get", "i"], ["array", ["get", "arr"]]]</pre></p>
+<strong>Serialized:</strong><p><pre>["index-of", ["get", "i"], ["array", ["get", "arr"]]]</pre></p>
+</div>
+<div class="test passed">
+<h2><span class="label">passed</span> index-of/with-from-index</h2>
+<p><pre>["index-of", ["get", "needle"], ["get", "hay"], ["get", "i"]]</pre></p>
+<strong>Serialized:</strong><p><pre>["index-of", ["get", "needle"], ["get", "hay"], ["get", "i"]]</pre></p>
+</div>
+<div class="test passed">
+<h2><span class="label">passed</span> index-of/basic-array</h2>
+<p><pre>["index-of", ["get", "i"], ["get", "arr"]]</pre></p>
+<strong>Serialized:</strong><p><pre>["index-of", ["get", "i"], ["get", "arr"]]</pre></p>
+</div>
+<div class="test passed">
+<h2><span class="label">passed</span> index-of/invalid-haystack</h2>
+<p><pre>["index-of", ["get", "needle"], ["get", "haystack"]]</pre></p>
+<strong>Serialized:</strong><p><pre>["index-of", ["get", "needle"], ["get", "haystack"]]</pre></p>
+</div>
+<div class="test passed">
+<h2><span class="label">passed</span> index-of/assert-string</h2>
+<p><pre>["index-of", ["get", "substr"], ["string", ["get", "str"]]]</pre></p>
+<strong>Serialized:</strong><p><pre>["index-of", ["get", "substr"], ["string", ["get", "str"]]]</pre></p>
+</div>
+</div>
