@@ -469,7 +469,7 @@ class ExpressionTest {
     @Test
     @Throws(Exception::class)
     fun testIndexOfWithFromIndex() {
-        val expected = arrayOf<Any>("index-of", 2f, arrayOf<Any>("literal", arrayOf<Any>(1f, 2f, 3f)), 1f)
+        val expected = arrayOf<Any>("index-of", 3f, arrayOf<Any>("literal", arrayOf<Any>(1f, 2f, 3f)), 1f)
         val actual =
             Expression.indexOf(Expression.literal(2f), Expression.literal(arrayOf<Any>(1f, 2f, 3f)), Expression.literal(1f))
                 .toArray()
